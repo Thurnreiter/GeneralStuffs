@@ -1,0 +1,27 @@
+object FormMainView: TFormMainView
+  Left = 0
+  Top = 0
+  ActiveControl = FBtnMVCClientController
+  BorderIcons = [biSystemMenu]
+  BorderStyle = Single
+  Caption = 'Main.View'
+  ClientHeight = 130
+  ClientWidth = 236
+  Position = ScreenCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  DesignerMasterStyle = 0
+  object FBtnMVCClientController: TButton
+    Position.X = 35.000000000000000000
+    Position.Y = 56.000000000000000000
+    Size.Width = 177.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Text = 'MVC Client Controller'
+    OnClick = FBtnMVCClientControllerClick
+  end
+end

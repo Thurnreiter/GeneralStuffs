@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{ECED5E9C-A483-412A-A4CD-18694C509D50}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="console\AprioriAlgorithm.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DUnitX\AprioriAlgorithmTextX.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="AprioriAlgorithm">
+        <MSBuild Projects="console\AprioriAlgorithm.dproj"/>
+    </Target>
+    <Target Name="AprioriAlgorithm:Clean">
+        <MSBuild Projects="console\AprioriAlgorithm.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AprioriAlgorithm:Make">
+        <MSBuild Projects="console\AprioriAlgorithm.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AprioriAlgorithmTextX">
+        <MSBuild Projects="DUnitX\AprioriAlgorithmTextX.dproj"/>
+    </Target>
+    <Target Name="AprioriAlgorithmTextX:Clean">
+        <MSBuild Projects="DUnitX\AprioriAlgorithmTextX.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AprioriAlgorithmTextX:Make">
+        <MSBuild Projects="DUnitX\AprioriAlgorithmTextX.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="AprioriAlgorithm;AprioriAlgorithmTextX"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="AprioriAlgorithm:Clean;AprioriAlgorithmTextX:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="AprioriAlgorithm:Make;AprioriAlgorithmTextX:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

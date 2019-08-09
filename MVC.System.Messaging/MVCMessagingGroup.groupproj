@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{0C24CD5C-E632-4ADE-9654-F6D9C5A66E31}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="MVCMessagingDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TestsX\MVCMessagingDemoTests.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="MVCMessagingDemo">
+        <MSBuild Projects="MVCMessagingDemo.dproj"/>
+    </Target>
+    <Target Name="MVCMessagingDemo:Clean">
+        <MSBuild Projects="MVCMessagingDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MVCMessagingDemo:Make">
+        <MSBuild Projects="MVCMessagingDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="MVCMessagingDemoTests">
+        <MSBuild Projects="TestsX\MVCMessagingDemoTests.dproj"/>
+    </Target>
+    <Target Name="MVCMessagingDemoTests:Clean">
+        <MSBuild Projects="TestsX\MVCMessagingDemoTests.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MVCMessagingDemoTests:Make">
+        <MSBuild Projects="TestsX\MVCMessagingDemoTests.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="MVCMessagingDemo;MVCMessagingDemoTests"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="MVCMessagingDemo:Clean;MVCMessagingDemoTests:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="MVCMessagingDemo:Make;MVCMessagingDemoTests:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

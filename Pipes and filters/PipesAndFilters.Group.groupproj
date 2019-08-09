@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{62701810-3A45-47ED-AAD9-07A417E7D94E}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="PipesAndFilters.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DUnitX\Test.PipesAndFilters.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="PipesAndFilters">
+        <MSBuild Projects="PipesAndFilters.dproj"/>
+    </Target>
+    <Target Name="PipesAndFilters:Clean">
+        <MSBuild Projects="PipesAndFilters.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PipesAndFilters:Make">
+        <MSBuild Projects="PipesAndFilters.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Test_PipesAndFilters">
+        <MSBuild Projects="DUnitX\Test.PipesAndFilters.dproj"/>
+    </Target>
+    <Target Name="Test_PipesAndFilters:Clean">
+        <MSBuild Projects="DUnitX\Test.PipesAndFilters.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Test_PipesAndFilters:Make">
+        <MSBuild Projects="DUnitX\Test.PipesAndFilters.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="PipesAndFilters;Test_PipesAndFilters"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="PipesAndFilters:Clean;Test_PipesAndFilters:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="PipesAndFilters:Make;Test_PipesAndFilters:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

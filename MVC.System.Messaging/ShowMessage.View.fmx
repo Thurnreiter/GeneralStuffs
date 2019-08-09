@@ -1,0 +1,52 @@
+object FormShowMessage: TFormShowMessage
+  Left = 0
+  Top = 0
+  ActiveControl = ButtonRefresh
+  BorderIcons = [biSystemMenu]
+  BorderStyle = Single
+  Caption = 'Messages'
+  ClientHeight = 374
+  ClientWidth = 215
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  DesignerMasterStyle = 0
+  object Memo1: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Align = Bottom
+    Position.Y = 64.000000000000000000
+    Size.Width = 215.000000000000000000
+    Size.Height = 310.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Viewport.Width = 211.000000000000000000
+    Viewport.Height = 306.000000000000000000
+  end
+  object Label1: TLabel
+    AutoSize = True
+    StyledSettings = [Family, Style, FontColor]
+    Position.X = 8.000000000000000000
+    Position.Y = 40.000000000000000000
+    Size.Width = 81.000000000000000000
+    Size.Height = 24.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 18.000000000000000000
+    Text = 'Time'
+    TabOrder = 2
+  end
+  object ButtonClose: TButton
+    Position.X = 128.000000000000000000
+    Position.Y = 9.000000000000000000
+    TabOrder = 1
+    Text = 'Close'
+  end
+  object ButtonRefresh: TButton
+    Position.X = 7.000000000000000000
+    Position.Y = 9.000000000000000000
+    TabOrder = 0
+    Text = 'Refresh'
+  end
+end

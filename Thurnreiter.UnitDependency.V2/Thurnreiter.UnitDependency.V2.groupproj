@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{432D4DDE-82A6-4144-99A5-DEA1CC757EE1}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Nathan.Cache.UnitTestX\Nathan.Dependency.V2.UnittestX.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Console\Nathan.Unused.Symbols.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Nathan_Dependency_V2_UnittestX">
+        <MSBuild Projects="Nathan.Cache.UnitTestX\Nathan.Dependency.V2.UnittestX.dproj"/>
+    </Target>
+    <Target Name="Nathan_Dependency_V2_UnittestX:Clean">
+        <MSBuild Projects="Nathan.Cache.UnitTestX\Nathan.Dependency.V2.UnittestX.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Nathan_Dependency_V2_UnittestX:Make">
+        <MSBuild Projects="Nathan.Cache.UnitTestX\Nathan.Dependency.V2.UnittestX.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Nathan_Unused_Symbols">
+        <MSBuild Projects="Console\Nathan.Unused.Symbols.dproj"/>
+    </Target>
+    <Target Name="Nathan_Unused_Symbols:Clean">
+        <MSBuild Projects="Console\Nathan.Unused.Symbols.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Nathan_Unused_Symbols:Make">
+        <MSBuild Projects="Console\Nathan.Unused.Symbols.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Nathan_Dependency_V2_UnittestX;Nathan_Unused_Symbols"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Nathan_Dependency_V2_UnittestX:Clean;Nathan_Unused_Symbols:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Nathan_Dependency_V2_UnittestX:Make;Nathan_Unused_Symbols:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
