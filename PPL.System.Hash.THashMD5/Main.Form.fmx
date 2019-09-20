@@ -1,0 +1,67 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 470
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  DesignerMasterStyle = 0
+  object Memo1: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Position.X = 24.000000000000000000
+    Position.Y = 24.000000000000000000
+    Size.Width = 593.000000000000000000
+    Size.Height = 393.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Viewport.Width = 589.000000000000000000
+    Viewport.Height = 389.000000000000000000
+  end
+  object BtnStart: TButton
+    Position.X = 240.000000000000000000
+    Position.Y = 432.000000000000000000
+    Size.Width = 120.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Text = 'Start'
+    OnClick = BtnStartClick
+  end
+  object BtnStartThread: TButton
+    Position.X = 368.000000000000000000
+    Position.Y = 432.000000000000000000
+    Size.Width = 120.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    Text = 'Start Thread'
+    OnClick = BtnStartThreadClick
+  end
+  object BtnStartTimerThread: TButton
+    Position.X = 496.000000000000000000
+    Position.Y = 432.000000000000000000
+    Size.Width = 120.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Text = 'StartTimerThread'
+    OnClick = BtnStartTimerThreadClick
+  end
+  object TimerThread: TTimer
+    OnTimer = TimerThreadTimer
+    Left = 192
+    Top = 176
+  end
+  object ShadowEffect1: TShadowEffect
+    Distance = 3.000000000000000000
+    Direction = 45.000000000000000000
+    Softness = 0.300000011920929000
+    Opacity = 0.600000023841857900
+    ShadowColor = claBlack
+  end
+end
