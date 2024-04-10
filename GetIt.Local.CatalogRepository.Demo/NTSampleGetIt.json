@@ -1,0 +1,33 @@
+{
+	"Id": "NT-72-Local",
+	"Name": "NT72Local",
+	"Version": "1.23",
+	"Description": "Sample for local GetIt Package.",
+	"Vendor": "Chanan",
+	"VendorUrl": "https://github.com/Thurnreiter",
+	"Tags": "NT, firemonkey, devexpress, ui, gui",
+	"Image": "NT.png",
+	"Url": "NTSampleInstaller.zip",
+	"Modified": "",
+	"License": "MPL1.0.txt",
+	"LicenseName": "MOZILLA PUBLIC LICENSE",
+	"TargetPath": "",
+	"RequireElevation": 1,
+	"AllUsers": 1,
+	"Actions": [
+		{
+			"Id": "22",
+			"ActionId": "3",
+			"ActionName": "ExecuteCommand",
+			"Type": "2",
+			"Description": "Execute bat file.",
+			"RequireElevation": "1",
+			"Active": "1",
+			"Parameter": [
+				{
+					"Parameter": "$(BDSCatalogRepositoryAllUsers)\\NT-72-Local\\NTSampleInstaller.bat"
+				}
+			]
+		}
+	]
+}
