@@ -28,6 +28,24 @@
 					"Parameter": "$(BDSCatalogRepositoryAllUsers)\\NT-72-Local\\NTSampleInstaller.bat"
 				}
 			]
+		},
+		{
+			"Id": "33",
+			"ActionId": "16",
+			"ActionName": "WarmNeededIDERestart",
+			"Type": "3",
+			"Description": "Restart Needed Advice",
+			"RequireElevation": "0",
+			"Parameter": []
+		},
+		{
+			"Id": "44",
+			"ActionId": "21",
+			"ActionName": "RestartIDE",
+			"Type": "3",
+			"Description": "Restart Needed Advice",
+			"RequireElevation": "0",
+			"Parameter": []
 		}
 	]
 }
