@@ -7,7 +7,7 @@ Finding out the "ActionID" is a bit complicated. Here is a list with "ActionID" 
 I'm not sure are all ActionId's correctly. 
 
 | Id | Available Actionname           | Desc. |
-| -- | ------------------------------ |  |
+| -- | ------------------------------ |------ |
 | 01 | AddOptionPath                  |  |
 | 02 | RemoveOptionPath               |  |
 | 03 | ExecuteProgram                 |  |
